@@ -32,7 +32,7 @@ where $G^+_{ij}(x;x')$ is the projection of the Green function on the basis of w
 
 <p>$$ G^+_{ij}(x;x') = \int_0^W dy \int_0^W dy'\: \chi^*_i(y) G^+(x,y:x',y') \chi_j(y') $$</p>
 
-and $k_{x,i}=\sqrt{k^2 - p_{y,i}^2}$ is the longitudinal component of the wavenumber, and $p_{y,i}$ is the transverse wavenumber.
+and $k_{x,i}=\sqrt{k^2 - p_{y,i}^2}$ is the longitudinal component of the wavevector, and $p_{y,i}$ is the transverse component.
 
 The program computes in particular the _distribution of transmission eigenvalues_, $\rho(T)$, which are the eigenvalues of $\mathsf{t}^\dagger \mathsf{t}$.
 This distribution is defined by
