@@ -1,0 +1,27 @@
+%% Created on 2024-07-10 at 12:49:55 CEST by David Gaspard <david.gaspard@espci.fr> 
+%% This is a file of the PlotHistogram subprogram of the RecurGreenModal program
+%% used to test the input of a real 1D array in Fortran.
+%% These lines should be skipped by PlotHistogram.
+0.1
+0.2
+0.3
+2.0
+1.0
+0.0
+## This is a funny comment followed by a space
+
+-1.0e-4
+-2.35258545896575e5
+5.24152252e-6
+-.852852963e-3
+
+!! Another comment preceded by a space...
+
+-8
+0
+17
+Nan
+0.85285, -0.12345
+blah blah
+
+%%%%%% End of File %%%%%%

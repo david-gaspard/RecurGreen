@@ -1,0 +1,13 @@
+## Created on 2025-03-24 at 10:55:18 CET by David Gaspard <david.gaspard@espci.fr>.
+## Directories ##
+bin/
+out/
+old/
+tikz/__pycache__/
+
+## Binary files ##
+recurgreen
+plothisto
+*.test
+*.mod
+*.o

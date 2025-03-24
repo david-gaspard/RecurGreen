@@ -1,0 +1,107 @@
+!!**************************************************************************************************
+!! Created on 2024-05-18 at 18:50:58 CEST by David Gaspard <david.gaspard@espci.fr>
+!! This program is distributed under the Creative Commons (CC) BY-NC-SA license.
+!! Fortran namelists containing the settings of the RecurGreen program.
+!!**************************************************************************************************
+&settings
+    task = 'tpattern'   !! Define the task: "tdistrib", "wavefunction", "tprofile", "tprofile_group", "tpattern" (see namelists below for details).
+/
+
+!!********************* TRANSMISSION DISTRIBUTION ************************
+!
+!&waveguide          !! Waveguide settings used for computing transmission-eigenvalue distribution.
+!    boundtype = 'periodic'  !! Type of boundary conditions in the transverse direction. Either "periodic" or "dirichlet".
+!    wol = 50.5      !! Width-to-wavelength ratio W/lambda (periodic boundary conditions). Typically: wol={25.5, 25.7, 25.98, 26.02}. 
+!                    !! Letter's std value: wol=50.5. Near-threshold progression: 25.5 + 0.5*(1 - 5^(-i)) for i={0,1,2,...}.
+!    exfac = 1.2     !! Multiplication factor for the number of modes to improve the disorder quality in the transverse direction (>1 includes evanescent modes).
+!    aratio = 1.0    !! Aspect ratio of the disordered region, L/W. Typically: aratio=1.
+!    dscat = 5.      !! Optical depth of scattering of the waveguide (length over mean free path, L/lscat). Typically: dscat={0.05, 0.2, 1, 5}.
+!    dabso = 0.0     !! Optical depth of absorption of the waveguide (length over mean free path, L/labso).
+!    nxdiso = 125    !! Number of "x" points in the disordered region used in the discretization. Recommended is nxdiso = 2*wol*exfac*aratio (or larger).
+!    nxfree = 0      !! Number of "x" points in the free region on one side (same on other side). Recommended is 0 for intensive simulations.
+!    napera = 1.0    !! Fraction of excited modes at port "a" (left-hand input port). Also numerical aperature or filtering parameter. Typically: fraca={0.1, 0.2, 0.5, 1}.
+!    naperb = 1.0    !! Fraction of observed modes at port "b" (right-hand output port). Also numerical aperature or filtering parameter. Typically: fracb=1.
+!/
+!
+!&tdistrib           !! Compute the transmission-eigenvalue distribution.
+!    nseed = 50    !! Total number of seeds, which is also the total number of realizations of the disorder. Recommended is nseed=50000.
+!    nbins = 128     !! Number of bins of the histogram. Recommended is nbins=256.
+!    nthreads = 10   !! Number of threads used to compute the transmission-eigenvalue distribution in parallel. Recommended is number of CPU cores.
+!    save_eigvals = .true.  !! If true, saves the transmission eigenvalues in a file. This may generate a huge file (1 kB/seed => 100 MB for 10^5 seeds).
+!/
+
+!!********************* WAVEFUNCTION ************************
+!
+!&waveguide          !! Waveguide settings used for graphical representations.
+!    boundtype = 'periodic'  !! Type of boundary conditions in the transverse direction. Either "periodic" or "dirichlet".
+!    wol = 50.5      !! Width-to-wavelength ratio W/lambda (periodic boundary conditions). Typically: wol=6.3.
+!    exfac = 5.0     !! Multiplication factor for the number of modes. Typically: exfac=28.
+!    aratio = 1.0    !! Aspect ratio of the disordered region, L/W. Typically: aratio=1.
+!    dscat = 1.0     !! Optical depth of scattering of the waveguide (length over mean free path, L/lscat).
+!    dabso = 0.0     !! Optical depth of absorption of the waveguide (length over mean free path, L/labso).
+!    nxdiso = 510    !! Number of "x" points in the disordered region used in the discretization. Recommended is nxdiso = 2*wol*exfac*aratio (or larger).
+!    nxfree = 255    !! Number of "x" points in the free region on one side (same on other side). Recommended is nxfree = nxdiso/2 for plotting the wavefunction.
+!    napera = 1.      !! Filtering parameter. Unused when computing the wavefunction.
+!    napera = 1.      !! Filtering parameter. Unused when computing the wavefunction.
+!/
+!
+!&wavefunction      !! Compute the wavefunction in the 2D waveguide with transverse periodic boundary conditions for a given realization of the disorder.
+!    iseed = 1      !! Seed index of the realization of the disorder.
+!    ipos = 1       !! Index of the initial/incident position. It must be in [1, nx]. ipos=1 corresponds to the leftmost edge.
+!    imode = 1      !! Index of the initial/incident mode. It must be in [1, nmu]. imode=1 always corresponds to the frontal mode (for "periodic" or "dirichlet").
+!/
+
+!!********************* TRANSMISSION-EIGENFUNCTION PROFILE ************************
+!
+!&waveguide          !! Waveguide settings used for computing transmission-eigenvalue distribution.
+!    boundtype = 'periodic'  !! Type of boundary conditions in the transverse direction. Either "periodic" or "dirichlet".
+!    wol = 50.5      !! Width-to-wavelength ratio W/lambda (periodic boundary conditions). Typically: wol={25.5, 25.7, 25.98, 26.02}. 
+!                    !! Letter's std value: wol=50.5. Near-threshold progression: 25.5 + 0.5*(1 - 5^(-i)) for i={0,1,2,...}.
+!    exfac = 1.2     !! Multiplication factor for the number of modes to improve the disorder quality in the transverse direction (>1 includes evanescent modes).
+!    aratio = 1.0    !! Aspect ratio of the disordered region, L/W. Typically: aratio=1.
+!    dscat = 15.0    !! Optical depth of scattering of the waveguide (length over mean free path, L/lscat). Typically: dscat={0.2, 1, 5}.
+!    dabso = 0.0     !! Optical depth of absorption of the waveguide (length over mean free path, L/labso).
+!    nxdiso = 125    !! Number of "x" points in the disordered region used in the discretization. Recommended is nxdiso = 2*wol*exfac*aratio (or larger).
+!    nxfree = 10     !! Number of "x" points in the free region on one side (same on other side). Recommended is 0 for intensive simulations.
+!    napera = 1.0    !! Fraction of excited modes at port "a" (left-hand input port). Also numerical aperature or filtering parameter. Typically: fraca={0.1, 0.2, 0.5, 1}.
+!    naperb = 1.0    !! Fraction of observed modes at port "b" (right-hand output port). Also numerical aperature or filtering parameter. Typically: fracb=1.
+!/
+!
+!&tprofile_group      !! Computes the transmission-eigenstate profile <|psi_T(x)|^2> for 4 values of T.
+!    tm = 0.998, 0.50, 0.100, 0.0010   !! List of central values for the transmission eigenvalue.
+!    dt = 0.001, 0.01, 0.002, 0.0001   !! Corresponding list of half-width for the transmission eigenvalue. The intervals are thus: [Tmin, Tmax] = [Tm-dt, Tm+dt].
+!    nseed = 10000    !! Number of realizations of the disorder used to average <|psi_T(x)|^2>. Recommended is nseed=10000.
+!    nthreads = 10    !! Number of threads used to compute the transmission-eigenvalue distribution in parallel. Recommended is number of CPU cores.
+!/
+!
+!&tprofile           !! Computes the transmission-eigenmode profile <|psi_T(x)|^2>.
+!    tmin = 0.997    !! Minimum transmission eigenvalue of the interval [Tmin, Tmax].
+!    tmax = 0.999    !! Maximum transmission eigenvalue of the interval [Tmin, Tmax].
+!    nseed = 20      !! Number of realizations of the disorder used to average <|psi_T(x)|^2>. Recommended is nseed=10000.
+!    nthreads = 10   !! Number of threads used to compute the transmission-eigenvalue distribution in parallel. Recommended is number of CPU cores.
+!/
+
+!!********************* TRANSMISSION/REFLECTION PATTERN ************************
+
+&waveguide          !! Waveguide settings used for computing transmission-eigenvalue distribution.
+    boundtype = 'periodic'  !! Type of boundary conditions in the transverse direction. Either "periodic" or "dirichlet".
+    wol = 50.5      !! Width-to-wavelength ratio W/lambda (periodic boundary conditions). Typically: wol={25.5, 25.7, 25.98, 26.02}. 
+                    !! Letter's std value: wol=50.5. Near-threshold progression: 25.5 + 0.5*(1 - 5^(-i)) for i={0,1,2,...}.
+    exfac = 1.2     !! Multiplication factor for the number of modes to improve the disorder quality in the transverse direction (>1 includes evanescent modes).
+    aratio = 1.0    !! Aspect ratio of the disordered region, L/W. Typically: aratio=1.
+    dscat = 1.     !! Optical depth of scattering of the waveguide (length over mean free path, L/lscat). Compare in particular dscat=2 and dscat=10.
+    dabso = 0.0     !! Optical depth of absorption of the waveguide (length over mean free path, L/labso).
+    nxdiso = 125    !! Number of "x" points in the disordered region used in the discretization. Recommended is nxdiso = 2*wol*exfac*aratio (or larger).
+    nxfree = 0      !! Number of "x" points in the free region on one side (same on other side). Recommended is 0 for intensive simulations.
+    napera = 1.0    !! Fraction of excited modes at port "a" (left-hand input port). Also numerical aperature or filtering parameter. Typically: fraca={0.1, 0.2, 0.5, 1}.
+    naperb = 1.0    !! Fraction of observed modes at port "b" (right-hand output port). Also numerical aperature or filtering parameter. Typically: fracb=1.
+/
+
+&tpattern               !! Computes the radiation pattern from the transmitted/reflected probabilities per channel.
+    nseed = 5000        !! Number of realizations of the disorder used to average the transmitted/reflected radiation pattern.
+    imode = 20          !! Index of the initial/incident mode. It must be in [1, nmu]. imode=1 always corresponds to the frontal mode (for "periodic" or "dirichlet").
+    nthreads = 10            !! Number of threads used to compute the radiation pattern in parallel. Recommended is number of CPU cores.
+    probatype = 'deposition' !! - probatype="incident" : Fix the incident channel and show |t_ba|^2 as a function of b.
+                             !! - probatype="total" : Compute the transmission probability sum(|t_ba|^2, b). The index "imode" of the incident wave is then ignored.
+                             !! - probatype="deposition" : Compute the probabilities of different channels at the center of the medium.
+/

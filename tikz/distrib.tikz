@@ -1,0 +1,20 @@
+\begin{tikzpicture}[%%
+    /pgfplots/every axis/.append style={%%
+        width=300pt,
+        ymode=log,
+        xmin=0, xmax=1,
+        xlabel={$T$},
+        every axis title/.append style={%%
+            text width=350pt,  %% Avoid title overflow.
+        },
+    },
+]%%
+\begin{axis}[%%
+    name={rho},
+    ymin=1e-2, ymax=1e2,
+    title={%(title)s},
+    ylabel={$\rho(T)$},
+]%%
+\addplot[black] table[x=tm, y=rho]{\jobname.csv};
+\end{axis}%%
+\end{tikzpicture}%%

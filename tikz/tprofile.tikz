@@ -1,0 +1,21 @@
+\begin{tikzpicture}[%%
+    /pgfplots/every axis/.append style={%%
+        width=300pt,
+        xlabel={$x/L$},
+        ylabel={$\langle|\psi_T(\mathbf{r})|^2\rangle$},
+        xmin=-0.05, xmax=1.05, ymin=0,
+        legend pos=outer north east,
+        table/col sep=comma,
+        every axis title/.append style={%%
+            text width=350pt,  %% Avoid title overflow.
+        },
+        scaled ticks=false,
+    },
+]%%
+\begin{axis}[%%
+    name={tprofile},
+    title={%(title)s},
+]%%
+\addplot[black, mark=*, only marks, mark size=0.6] table[x=x, y=tprofile]{\jobname.avg.csv};
+\end{axis}%%
+\end{tikzpicture}%%

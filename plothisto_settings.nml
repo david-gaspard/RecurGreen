@@ -1,0 +1,11 @@
+!!**************************************************************************************************
+!! Created on 2024-07-10 at 11:36:57 CEST by David Gaspard <david.gaspard@espci.fr>
+!! This program is distributed under the Creative Commons (CC) BY-NC-SA license.
+!! Fortran namelist containing the settings of the PlotHistogram program, a subprogram of the RecurGreenModal program.
+!!**************************************************************************************************
+&settings
+    bintype = 'chebyshev'    !! Type of bin lattice used for the bins. Either "linear" or "chebyshev".
+    nbins = 128     !! Number of desired bins for the distribution. Typically, nx=256 or nx=128.
+	xmin = 0.0     !! Minimum abscissa of the distribution.
+    xmax = 1.0     !! Maximum abscissa of the distribution.
+/

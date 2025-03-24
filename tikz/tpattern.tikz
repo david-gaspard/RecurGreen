@@ -1,0 +1,21 @@
+\begin{tikzpicture}[%%
+    /pgfplots/every axis/.append style={%%
+        width=300pt,
+        xlabel={Channel index},
+        ylabel={Probability},
+        legend pos=outer north east,
+        table/col sep=comma,
+        every axis title/.append style={%%
+            text width=350pt,  %% Avoid title overflow.
+        },
+        scaled ticks=false,
+    },
+]%%
+\begin{axis}[%%
+    name={tpattern},
+    title={%(title)s},
+]%%
+\addplot[blue, mark=*, mark size=0.6, line join=bevel] table[x=imu, y=tprob]{\jobname.csv}; \addlegendentry{Transmission proba.}
+\addplot[red,  mark=*, mark size=0.6, line join=bevel] table[x=imu, y=rprob]{\jobname.csv}; \addlegendentry{Reflection proba.}
+\end{axis}%%
+\end{tikzpicture}%%

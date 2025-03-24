@@ -1,0 +1,31 @@
+\definecolor{qcolor1}{HTML}{DE0000}%%%% Color palette for the Q field (Reddish).
+\definecolor{qcolor2}{HTML}{D08510}%%%% Color palette for the Q field (Orangish).
+\definecolor{qcolor3}{HTML}{D6C319}%%%% Color palette for the Q field (Yellowish).
+\definecolor{qcolor4}{HTML}{2EB833}%%%% Color palette for the Q field (Greenish).
+\definecolor{qcolor5}{HTML}{0FBBBC}%%%% Color palette for the Q field (Cyanish).
+\definecolor{qcolor6}{HTML}{195EBC}%%%% Color palette for the Q field (Bluish).
+\definecolor{qcolor7}{HTML}{B92AB6}%%%% Color palette for the Q field (Purplish).
+\begin{tikzpicture}[%%
+    /pgfplots/every axis/.append style={%%
+        width=320pt,
+        xlabel={$x/L$},
+        ylabel={$\langle|\psi_T(\mathbf{r})|^2\rangle$},
+        xmin=-0.05, xmax=1.05, ymin=0,
+        legend pos=outer north east,
+        table/col sep=comma,
+        every axis title/.append style={%%
+            text width=350pt,  %% Avoid title overflow.
+        },
+        scaled ticks=false,
+    },
+]%%
+\begin{axis}[%%
+    name={tprofile},
+    title={%(title)s},
+]%%
+\addplot[qcolor1!80!black, mark=*, only marks, mark size=0.7] table[x=x, y index=1]{\jobname.csv};
+\addplot[qcolor3!80!black, mark=*, only marks, mark size=0.7] table[x=x, y index=2]{\jobname.csv};
+\addplot[qcolor4!80!black, mark=*, only marks, mark size=0.7] table[x=x, y index=3]{\jobname.csv};
+\addplot[qcolor6!80!black, mark=*, only marks, mark size=0.7] table[x=x, y index=4]{\jobname.csv};
+\end{axis}%%
+\end{tikzpicture}%%
