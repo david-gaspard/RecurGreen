@@ -104,9 +104,9 @@ The parameters of the corresponding namelist are:
 
 Computes the disorder-averaged profile of transmission eigenstates $\langle|\psi_T(x)|^2\rangle$ where 
 
-$$ \psi_T(x,y) = 2\mathrm{i}\sqrt{k} \sum_{m,m'} \chi_m(y) G^+_{mm'}(x;x_0) \sqrt{k_{x,m'}} u_{T,m'} $$
+<p>$$ \psi_T(x,y) = 2\mathrm{i}\sqrt{k} \sum_{m,m'} \chi_m(y) G^+_{mm'}(x;x_0) \sqrt{k_{x,m'}} u_{T,m'} $$</p>
 
-and $\mathbf{u}_T$ is the transmission eigenvector (eigenvector of $\mathsf{t}^\dagger\mathsf{t}$) normalized by $|\mathbf{u}_T|^2=1$.
+and $u_T$ is the transmission eigenvector (eigenvector of $\mathsf{t}^\dagger\mathsf{t}$) normalized by $|u_T|^2=1$.
 $\psi_T(x,y)$ is the transmission eigenfunction associated to transmission eigenvalue $T$.
 This quantity is not only averaged in the transverse direction ("y" direction), but also over all the eigenvalues $T$ located in the search interval $[T_{\min}, T_{\max}]$.
 The parameters of the corresponding namelist are:
