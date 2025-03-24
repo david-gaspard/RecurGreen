@@ -11,7 +11,7 @@ program plot_histogram
 	integer :: configfp, datafp
 	logical :: fexist
     
-	write (stdout, '(a)') "====== This is PlotHisto (from RecurGreenModal) " // trim(copyright) // " ======"
+	write (stdout, '(a)') "====== This is PlotHisto (from RecurGreen) " // trim(copyright) // " ======"
 	if (command_argument_count() /= 2) then
 		write (stdout, '(a)') tag_info // "Usage: $ ./plothisto plothisto_settings.nml path/to/samples.csv"
         write (stderr, '(a)') tag_error // "Two files expected, doing nothing..."

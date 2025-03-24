@@ -1,5 +1,5 @@
 ## Created on 2024-05-15 at 15:21:09 CEST by David Gaspard <david.gaspard@espci.fr>
-## Makefile of the Fortran program RecurGreenModal aiming at solving the wave equation in a 2D disordered waveguide.
+## Makefile of the Fortran program RecurGreen aiming at solving the wave equation in a 2D disordered waveguide.
 ##########################
 ## FILE PARAMETERS
 ##########################

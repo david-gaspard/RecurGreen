@@ -1,7 +1,7 @@
 !!**************************************************************************************************
 !! Created on 2024-05-15 at 15:00:37 CEST by David Gaspard <david.gaspard@espci.fr>
 !! This program is distributed under the Creative Commons (CC) BY-NC-SA license.
-!! Fortran module containing the basic utilities of the RecurGreenModal program including mathematical constants.
+!! Fortran module containing the basic utilities of the RecurGreen program including mathematical constants.
 !!**************************************************************************************************
 module base_utils
     use, intrinsic :: iso_fortran_env, only: int32, int64, real32, real64, input_unit, output_unit, error_unit
@@ -18,7 +18,7 @@ module base_utils
     complex(wp), parameter :: iu = (0._wp, 1._wp)  !! Imaginary unit (iu).
     
     !! Global strings regarding the program:
-    character(len=*), parameter :: program_shortname = "RecurGreenModal v1.0"
+    character(len=*), parameter :: program_shortname = "RecurGreen v1.0"
     character(len=*), parameter :: copyright = "(c) 2024 David GASPARD <david.gaspard@espci.fr>"
     character(len=*), parameter :: program_fullname  = program_shortname // " - Computing the transmission statistics &
         &through a disordered waveguide"
@@ -53,8 +53,8 @@ module base_utils
 	character(len=*), parameter :: tag_pass  = "["//tcolor_bold//tcolor_lightgreen//" OK "//tcolor_nc//"] "
     
 	!! Generic error messages:
-	character(len=*), parameter :: errmsg_invalid_arg   = "RecurGreenModal: Invalid arguments, aborting..."
-	character(len=*), parameter :: errmsg_unbound_index = "RecurGreenModal: Index out of bounds, aborting..."
+	character(len=*), parameter :: errmsg_invalid_arg   = "RecurGreen: Invalid arguments, aborting..."
+	character(len=*), parameter :: errmsg_unbound_index = "RecurGreen: Index out of bounds, aborting..."
 	
 	contains
     

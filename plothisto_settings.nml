@@ -1,7 +1,7 @@
 !!**************************************************************************************************
 !! Created on 2024-07-10 at 11:36:57 CEST by David Gaspard <david.gaspard@espci.fr>
 !! This program is distributed under the Creative Commons (CC) BY-NC-SA license.
-!! Fortran namelist containing the settings of the PlotHistogram program, a subprogram of the RecurGreenModal program.
+!! Fortran namelist containing the settings of the PlotHistogram program, a subprogram of the RecurGreen program.
 !!**************************************************************************************************
 &settings
     bintype = 'chebyshev'    !! Type of bin lattice used for the bins. Either "linear" or "chebyshev".
