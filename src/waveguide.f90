@@ -1,6 +1,6 @@
 !!**************************************************************************************************
 !! Created on 2024-05-15 at 16:16:34 CEST by David Gaspard <david.gaspard@espci.fr>
-!! This program is distributed under the Creative Commons (CC) BY-NC-SA license.
+!! This program is distributed under the MIT License.
 !! Fortran module to define the disordered waveguide type. We assume that the waveguide is two-dimensional
 !! with periodic boundary conditions in the transverse direction.
 !! Regarding the implementation of the recursive Green method, see Appendix G of David Gaspard's notes

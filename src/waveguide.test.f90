@@ -1,6 +1,6 @@
 !!**************************************************************************************************
 !! Created on 2024-05-17 at 17:41:04 CEST by David Gaspard <david.gaspard@espci.fr>
-!! This program is distributed under the Creative Commons (CC) BY-NC-SA license.
+!! This program is distributed under the MIT License.
 !! Fortran program to test the waveguide type and in particular the recursive Green method.
 !!**************************************************************************************************
 program waveguide_test

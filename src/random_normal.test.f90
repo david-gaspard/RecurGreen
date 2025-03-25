@@ -1,6 +1,6 @@
 !!**************************************************************************************************
 !! Created on 2024-05-15 at 09:47:43 CEST by David Gaspard <david.gaspard@espci.fr>
-!! This program is distributed under the Creative Commons (CC) BY-NC-SA license.
+!! This program is distributed under the MIT License.
 !! Fortran program to test the implementation of the random normal generator. 
 !!**************************************************************************************************
 program random_normal_test

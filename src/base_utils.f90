@@ -1,6 +1,6 @@
 !!**************************************************************************************************
 !! Created on 2024-05-15 at 15:00:37 CEST by David Gaspard <david.gaspard@espci.fr>
-!! This program is distributed under the Creative Commons (CC) BY-NC-SA license.
+!! This program is distributed under the MIT License.
 !! Fortran module containing the basic utilities of the RecurGreen program including mathematical constants.
 !!**************************************************************************************************
 module base_utils

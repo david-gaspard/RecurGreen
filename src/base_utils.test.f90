@@ -1,6 +1,6 @@
 !!**************************************************************************************************
 !! Created on 2024-05-16 at 10:13:45 CEST by David Gaspard <david.gaspard@espci.fr>
-!! This program is distributed under the Creative Commons (CC) BY-NC-SA license.
+!! This program is distributed under the MIT License.
 !! Fortran program to test the procedures of the base_utils module.
 !!**************************************************************************************************
 program base_utils_test

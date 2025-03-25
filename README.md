@@ -1,11 +1,14 @@
 # RecurGreen
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 * [PRESENTATION](#presentation)
+	- [Purposes](#purposes)
 * [USAGE AND OPTIONS](#usage-and-options)
-	- [recurgreen](#recurgreen)
-    - [waveguide](#waveguide)
-    - [tasks](#tasks)
-	- [plothisto](#plothisto)
+	- [`recurgreen` executable](#recurgreen-executable)
+	- [`waveguide` namelist](#waveguide-namelist)
+	- [Tasks](#tasks)
+	- [`plothisto` executable](#plothisto-executable)
 * [REFERENCES](#references)
 
 ## PRESENTATION
@@ -23,6 +26,8 @@ where $\psi(x,y)$ is the sought wavefunction, $k$ is the central wavenumber, $\v
 $L$ being the length of the disordered region, $W$ its width, and $\alpha$ is the disorder strength, which is related to the scattering mean free path by $\ell_{\rm s}=k/(\pi\nu\alpha)$ under the independent scattering approximation.
 This potential has zero correlation length, so that the independent scatterings are isotropic and the transport and scattering mean free path are equal.
 The wave equation is discretized along the longitudinal coordinate $x$ and expressed on the basis of the transverse modes of the waveguide instead of a spatial discretization along the $y$ coordinate.
+
+### Purposes
 
 The main focus of the program is the computation of the _transmission matrix_ $\mathsf{t}$ according to the Fisher-Lee relation [[2]](#2)
 
@@ -43,7 +48,7 @@ where $\langle\cdot\rangle$ denotes the average over the disorder, and $N$ is th
 
 ## USAGE AND OPTIONS
 
-### recurgreen
+### `recurgreen` executable
 
 The syntax of the executable `recurgreen` reads:
 ```
@@ -57,7 +62,7 @@ This file must contain at least three [Fortran namelists](https://www.intel.com/
 * `waveguide`: This namelist contains the parameters of the disordered waveguide. See [waveguide](#waveguide) for the list of parameters.
 * A namelist which depends on the task prescribed in the `settings` namelist. See [tasks](#tasks) for the list of available tasks.
 
-### waveguide
+### `waveguide` namelist
 
 This namelist contains several parameters which characterize the disordered waveguide:
 
@@ -75,7 +80,7 @@ This namelist contains several parameters which characterize the disordered wave
 * `napera`: Fraction of excited modes at the input lead (port "a"). Also numerical aperature or filtering parameter. It must be between 0 and 1.
 * `naperb`: Fraction of observed modes at output lead (port "b"). Also numerical aperature or filtering parameter. It must be between 0 and 1.
 
-### tasks
+### Tasks
 
 The `task` entry of the namelist `settings` may contain any of the following instructions and must be accompanied with a namelist of the same title.
 
@@ -138,7 +143,7 @@ The parameters of the corresponding namelist are:
     - `total`: Compute the total transmission probability $\sum_{i} |t_{ij}|^2$ of channel $j$. The index `imode` of the incident wave is then ignored.
     - `deposition`: Compute the deposition probability at the center of the medium, i.e., $|Z_{ij}|^2$ as a function of $i$ for a fixed incident channel $j$.
 
-### plothisto
+### `plothisto` executable
 
 The syntax of the executable `plothisto` reads:
 ```
@@ -163,5 +168,3 @@ _Classical and quantum ballistic-transport anomalies in microjunctions_,
 Fisher, Daniel S. and Lee, Patrick A.,
 _Relation between conductivity and transmission matrix_,
 [Phys. Rev. B **23**, 6851-6854 (1981)](https://doi.org/10.1103/PhysRevB.23.6851).
-
-

@@ -1,6 +1,6 @@
 !!**************************************************************************************************
 !! Created on 2024-05-14 at 17:34:31 CEST by David Gaspard <david.gaspard@espci.fr>
-!! This program is distributed under the Creative Commons (CC) BY-NC-SA license.
+!! This program is distributed under the MIT License.
 !! Fortran module to generate normally distributed random numbers.
 !!**************************************************************************************************
 module random_normal

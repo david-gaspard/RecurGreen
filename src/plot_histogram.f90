@@ -1,6 +1,6 @@
 !!**************************************************************************************************
 !! Created on 2024-07-10 at 11:19:33 CEST by David Gaspard <david.gaspard@espci.fr>
-!! This program is distributed under the Creative Commons (CC) BY-NC-SA license.
+!! This program is distributed under the MIT License.
 !! Fortran program to plot or replot the histogram corresponding to the list of samples given by the
 !! data file in argument. One sample is given by line.
 !!**************************************************************************************************
