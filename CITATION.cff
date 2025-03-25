@@ -1,0 +1,42 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: RecurGreen
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: David
+    family-names: Gaspard
+    email: david.gaspard@espci.fr
+    affiliation: 'Institut Langevin, ESPCI Paris'
+    orcid: 'https://orcid.org/0000-0002-4449-8782'
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.15083423
+    description: The DOI of the latest version
+  - type: url
+    value: 'https://github.com/david-gaspard/RecurGreen'
+    description: The URL of the latest version
+repository-code: 'https://github.com/david-gaspard/RecurGreen'
+abstract: >-
+  RecurGreen is a Fortran 2008 program to compute the Green
+  function corresponding to the propagation of a scalar wave
+  in a 2D disordered waveguide. The algorithm used is a
+  variant of the recursive Green method in the basis of the
+  transverse eigenmodes of the waveguide. The focus of this
+  program is the computation of the transmission matrix and
+  the distribution of transmission eigenvalues when
+  averaging over the realizations of the disorder.
+keywords:
+  - Recursive Green algorithm
+  - Wave equation
+  - Disordered waveguide
+  - Transmission matrix
+  - Transmission eigenvalues
+license: MIT
+commit: 1055f2038f9b01c0cd0589906cb7e1507a1b4217
+version: v1.0
+date-released: '2025-03-25'
