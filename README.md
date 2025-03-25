@@ -58,9 +58,9 @@ This program reads and executes the instructions given by the configuration file
 
 This file must contain at least three [Fortran namelists](https://www.intel.com/content/www/us/en/docs/fortran-compiler/developer-guide-reference/2024-2/namelist.html):
 
-* `settings`: The only entry of this namelist is `task` which determines the quantity to compute. See [tasks](#tasks) for the list of available tasks.
-* `waveguide`: This namelist contains the parameters of the disordered waveguide. See [waveguide](#waveguide) for the list of parameters.
-* A namelist which depends on the task prescribed in the `settings` namelist. See [tasks](#tasks) for the list of available tasks.
+* `settings`: The only entry of this namelist is `task` which determines the quantity to compute. See [Tasks](#tasks) for the list of available tasks.
+* `waveguide`: This namelist contains the parameters of the disordered waveguide. See [waveguide](#waveguide-namelist) for the list of parameters.
+* A namelist which depends on the task prescribed in the `settings` namelist. See [Tasks](#tasks) for the list of available tasks.
 
 ### `waveguide` namelist
 
@@ -95,7 +95,7 @@ The corresponding namelist must contain the following entries:
 * `nbins`: Number of bins of the histogram. Recommended value is `nbins=256` to resolve the structures of the distribution.
 * `nthreads`: Number of threads used to compute the transmission-eigenvalue distribution in parallel. Recommended value is the number of CPU cores.
 * `save_eigvals`: If true, saves the raw transmission eigenvalues in a file. Note that this may generate big files (tens of MB).
-    This option can be used to replot the distribution with other binning parameters (see also [plothisto](#plothisto)).
+    This option can be used to replot the distribution with other binning parameters (see also [plothisto](#plothisto-executable)).
 
 #### `wavefunction`
 
