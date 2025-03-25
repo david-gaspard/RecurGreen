@@ -3,6 +3,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 * [PRESENTATION](#presentation)
+	- [Physical model](#physical-model)
 	- [Purposes](#purposes)
 * [USAGE AND OPTIONS](#usage-and-options)
 	- [`recurgreen` executable](#recurgreen-executable)
@@ -13,8 +14,12 @@
 
 ## PRESENTATION
 
-RecurGreen is a Fortran program to compute the Green function $G^+(x,y;x',y')$ corresponding to the propagation of a wave in a 2D disordered waveguide starting from position $(x',y')$.
-The algorithm used is a variant of the _recursive Green method_ [[1]](#1), hence the name of the program.
+RecurGreen is a Fortran 2008 program to compute the Green function $G^+(x,y;x',y')$ corresponding to the propagation of a scalar wave in a 2D disordered waveguide starting from some position $(x',y')$.
+The algorithm used is a variant of the _recursive Green method_ [[1]](#1), hence the name of the program, expressed in the basis of the transverse eigenmodes of the waveguide.
+The focus of this program is the computation of the transmission matrix and the distribution of transmission eigenvalues when averaging over the realizations of the disorder.
+
+### Physical model
+
 The Green function equation has the form
 
 <p>$$ \left( \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + k^2 + \mathrm{i}\varepsilon - U(x,y) \right) \psi(x,y) = \delta(x-x')\delta(y-y') $$</p>
