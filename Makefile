@@ -26,7 +26,10 @@ FFLAGS  = -J$(BINDIR) $(OMP) -Wall -Wno-tabs
 ## -O3 -march=native
 LIBS    = -lblas -llapack
 
-all: recurgreen plothisto
+all: directories recurgreen plothisto
+
+directories:
+	mkdir -p $(BINDIR)
 
 recurgreen: $(BINLIST) bin/main.o
 	$(FORT) $(FFLAGS) $^ $(LIBS) -o $@
@@ -43,7 +46,7 @@ $(BINDIR)/%.o: $(SRCDIR)/%.f90
 TESTSRCLIST = $(shell find $(SRCDIR) -name "*.test.f90")
 TESTEXELIST = $(TESTSRCLIST:$(SRCDIR)/%.f90=%)
 
-test: $(BINLIST) $(TESTEXELIST)
+test: directories $(BINLIST) $(TESTEXELIST)
 
 %.test: $(BINLIST) $(BINDIR)/%.test.o
 	$(FORT) $(FFLAGS) $^ $(LIBS) -o $@
@@ -52,6 +55,6 @@ test: $(BINLIST) $(TESTEXELIST)
 ## CLEAN ALL BUILDS AND TESTS
 ##################################
 clean:
-	rm -rfv recurgreen plothisto $(BINDIR)/*.o $(BINDIR)/*.mod $(TESTEXELIST)
+	rm -rfv recurgreen plothisto $(BINDIR) $(TESTEXELIST)
 
 ###### END OF FILE ######
