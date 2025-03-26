@@ -7,6 +7,8 @@
 * [PRESENTATION](#presentation)
 	- [Physical model](#physical-model)
 	- [Purposes](#purposes)
+* [INSTALLATION](#installation)
+    - [Dependencies](#dependencies)
 * [USAGE AND OPTIONS](#usage-and-options)
 	- [`recurgreen` executable](#recurgreen-executable)
 	- [`waveguide` namelist](#waveguide-namelist)
@@ -17,8 +19,11 @@
 ## PRESENTATION
 
 RecurGreen is a Fortran 2008 program to compute the Green function $G^+(x,y;x',y')$ corresponding to the propagation of a scalar wave in a 2D disordered waveguide starting from some position $(x',y')$.
-The algorithm used is a variant of the _recursive Green method_ [[1]](#1), hence the name of the program, expressed in the basis of the transverse eigenmodes of the waveguide.
+The algorithm used is a variant of the *recursive Green method* [[1]](#1), hence the name of the program, expressed in the basis of the transverse eigenmodes of the waveguide.
 The focus of this program is the computation of the transmission matrix and the distribution of transmission eigenvalues when averaging over the realizations of the disorder.
+
+This program was originally developed in May 2024 to test the validity of the *radiant field theory* [[2](#2), [3](#3)].
+The results of this program are presented in particular in the short paper [[2]](#2).
 
 ### Physical model
 
@@ -36,7 +41,7 @@ The wave equation is discretized along the longitudinal coordinate $x$ and expre
 
 ### Purposes
 
-The main focus of the program is the computation of the _transmission matrix_ $\mathsf{t}$ according to the Fisher-Lee relation [[2]](#2)
+The main focus of the program is the computation of the _transmission matrix_ $\mathsf{t}$ according to the Fisher-Lee relation [[4]](#4)
 
 <p>$$ t_{ij} = 2\mathrm{i} \sqrt{k_{x,i} k_{x,j}} G^+_{ij}(L;0) $$</p>
 
@@ -52,6 +57,27 @@ This distribution is defined by
 <p>$$ \rho(T) = \frac{1}{N} \sum_{n=1}^N \langle\delta(T - T_n)\rangle = \frac{1}{N} \mathrm{Tr}\langle\delta(T - \mathsf{t}^\dagger \mathsf{t})\rangle $$</p>
 
 where $\langle\cdot\rangle$ denotes the average over the disorder, and $N$ is the number of transmission eigenvalues.
+
+## INSTALLATION
+
+The source files can be downloaded using the `git clone` command:
+```
+git clone https://github.com/<name_of_repository>.git
+```
+To compile the program, call the `make` utility in the root directory:
+```
+make all
+```
+
+### Dependencies
+
+The program has the following dependencies:
+
+* The `gfortran` compiler, or any other compiler compliant with the [Fortran 2008](https://en.wikipedia.org/wiki/Fortran#Fortran_2008) standard and providing support for [OpenMP](https://en.wikipedia.org/wiki/OpenMP).
+* The [LAPACK](https://en.wikipedia.org/wiki/LAPACK) Library.
+* The `mkdir` command is called to create subdirectories to store the output data.
+* [Python 3](https://en.wikipedia.org/wiki/Python_(programming_language)) scripts are called to generate the [TikZ](https://en.wikipedia.org/wiki/PGF/TikZ) codes for the plots.
+* The LaTeX compiler `pdflatex` with the [PGFPlots package](https://www.ctan.org/pkg/pgfplots) is called to compile the plots.
 
 ## USAGE AND OPTIONS
 
@@ -172,6 +198,16 @@ _Classical and quantum ballistic-transport anomalies in microjunctions_,
 [Phys. Rev. B **44**, 10637-10675 (1991)](https://doi.org/10.1103/PhysRevB.44.10637).
 
 <a id="2">[2]</a>
+David Gaspard and Arthur Goetschy,
+*Radiant Field Theory: A Transport Approach to Coherent Control of Transmission through Disordered Media*,
+[https://arxiv.org/abs/2411.10360](https://arxiv.org/abs/2411.10360).
+
+<a id="3">[3]</a>
+David Gaspard and Arthur Goetschy,
+*Transmission eigenvalue distribution in disordered media from radiant field theory*,
+[https://arxiv.org/abs/2411.10355](https://arxiv.org/abs/2411.10355).
+
+<a id="4">[4]</a>
 Fisher, Daniel S. and Lee, Patrick A.,
 _Relation between conductivity and transmission matrix_,
 [Phys. Rev. B **23**, 6851-6854 (1981)](https://doi.org/10.1103/PhysRevB.23.6851).
