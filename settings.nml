@@ -89,7 +89,7 @@
                     !! Letter's std value: wol=50.5. Near-threshold progression: 25.5 + 0.5*(1 - 5^(-i)) for i={0,1,2,...}.
     exfac = 1.2     !! Multiplication factor for the number of modes to improve the disorder quality in the transverse direction (>1 includes evanescent modes).
     aratio = 1.0    !! Aspect ratio of the disordered region, L/W. Typically: aratio=1.
-    dscat = 1.     !! Optical depth of scattering of the waveguide (length over mean free path, L/lscat). Compare in particular dscat=2 and dscat=10.
+    dscat = 0.2     !! Optical depth of scattering of the waveguide (length over mean free path, L/lscat). Compare in particular dscat=2 and dscat=10.
     dabso = 0.0     !! Optical depth of absorption of the waveguide (length over mean free path, L/labso).
     nxdiso = 125    !! Number of "x" points in the disordered region used in the discretization. Recommended is nxdiso = 2*wol*exfac*aratio (or larger).
     nxfree = 0      !! Number of "x" points in the free region on one side (same on other side). Recommended is 0 for intensive simulations.
@@ -98,10 +98,10 @@
 /
 
 &tpattern               !! Computes the radiation pattern from the transmitted/reflected probabilities per channel.
-    nseed = 5000        !! Number of realizations of the disorder used to average the transmitted/reflected radiation pattern.
+    nseed = 100        !! Number of realizations of the disorder used to average the transmitted/reflected radiation pattern.
     imode = 20          !! Index of the initial/incident mode. It must be in [1, nmu]. imode=1 always corresponds to the frontal mode (for "periodic" or "dirichlet").
     nthreads = 10            !! Number of threads used to compute the radiation pattern in parallel. Recommended is number of CPU cores.
-    probatype = 'deposition' !! - probatype="incident" : Fix the incident channel and show |t_ba|^2 as a function of b.
+    probatype = 'total' !! - probatype="incident" : Fix the incident channel and show |t_ba|^2 as a function of b.
                              !! - probatype="total" : Compute the transmission probability sum(|t_ba|^2, b). The index "imode" of the incident wave is then ignored.
                              !! - probatype="deposition" : Compute the probabilities of different channels at the center of the medium.
 /
