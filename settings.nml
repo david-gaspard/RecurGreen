@@ -98,10 +98,10 @@
 /
 
 &tpattern               !! Computes the radiation pattern from the transmitted/reflected probabilities per channel.
-    nseed = 100        !! Number of realizations of the disorder used to average the transmitted/reflected radiation pattern.
+    nseed = 2000        !! Number of realizations of the disorder used to average the transmitted/reflected radiation pattern.
     imode = 20          !! Index of the initial/incident mode. It must be in [1, nmu]. imode=1 always corresponds to the frontal mode (for "periodic" or "dirichlet").
     nthreads = 10            !! Number of threads used to compute the radiation pattern in parallel. Recommended is number of CPU cores.
-    probatype = 'total' !! - probatype="incident" : Fix the incident channel and show |t_ba|^2 as a function of b.
+    probatype = 'incident'   !! - probatype="incident" : Fix the incident channel and show |t_ba|^2 as a function of b.
                              !! - probatype="total" : Compute the transmission probability sum(|t_ba|^2, b). The index "imode" of the incident wave is then ignored.
                              !! - probatype="deposition" : Compute the probabilities of different channels at the center of the medium.
 /

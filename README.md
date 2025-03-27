@@ -7,6 +7,7 @@
 * [PRESENTATION](#presentation)
 	- [Physical model](#physical-model)
 	- [Purposes](#purposes)
+    - [Acknowledgements](#acknowledgements)
 * [INSTALLATION](#installation)
     - [Dependencies](#dependencies)
 * [USAGE AND OPTIONS](#usage-and-options)
@@ -21,9 +22,6 @@
 RecurGreen is a Fortran 2008 program to compute the Green function $G^+(x,y;x',y')$ corresponding to the propagation of a scalar wave in a 2D disordered waveguide starting from some position $(x',y')$.
 The algorithm used is a variant of the *recursive Green method* [[1]](#1), hence the name of the program, expressed in the basis of the transverse eigenmodes of the waveguide.
 The focus of this program is the computation of the transmission matrix and the distribution of transmission eigenvalues when averaging over the realizations of the disorder.
-
-This program was originally developed in May 2024 to test the validity of the *radiant field theory* [[2](#2), [3](#3)].
-The results of this program are presented in particular in the short paper [[2]](#2).
 
 ### Physical model
 
@@ -57,6 +55,12 @@ This distribution is defined by
 <p>$$ \rho(T) = \frac{1}{N} \sum_{n=1}^N \langle\delta(T - T_n)\rangle = \frac{1}{N} \mathrm{Tr}\langle\delta(T - \mathsf{t}^\dagger \mathsf{t})\rangle $$</p>
 
 where $\langle\cdot\rangle$ denotes the average over the disorder, and $N$ is the number of transmission eigenvalues.
+
+### Acknowledgements
+
+This program was developed by David Gaspard ([Institut Langevin](https://www.institut-langevin.espci.fr/home), ESPCI Paris, PSL University, CNRS) in May 2024 to test the validity of the *radiant field theory* [[2](#2), [3](#3)].
+The results of this program are presented in particular in the short paper [[2]](#2).
+This research has been supported by the ANR project MARS_light under reference ANR-19-CE30-0026 and by the program "Investissements d'Avenir" launched by the French Government.
 
 ## INSTALLATION
 
